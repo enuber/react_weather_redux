@@ -1,14 +1,21 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history';
+import ShowWeather from './weather/ShowWeather';
+import ShowDay from './weather/ShowDay';
 import Header from './Header';
+import ZipcodeInput from './Zipcode_Input';
 
 const App = () => {
     return(
         <div className="ui container" style={{marginTop: '10px'}}>
             <Router history={history}>
                 <Header/>
-                App
+                <ZipcodeInput/>
+                <Switch>
+                    <Route path="/" exact component={ShowWeather}  />
+                    <Route path="/:day" component={ShowDay}  />
+                </Switch>
             </Router>
         </div>
     )
