@@ -13,14 +13,12 @@ class Zipcode_Input extends React.Component {
         return (parseFloat(currentZip) === parseInt(currentZip) && !isNaN(currentZip))
     };
 
-    onFormSubmit = e => {
+    onFormSubmit = async e => {
         e.preventDefault();
         const { zipcode } = this.state;
         if ((zipcode.length === 5) && (this.isInt(zipcode))) {
-            console.log('here');
-            this.props.getWeatherData(zipcode);
-            // this.props.onSubmit(zipcode, false);
-            // this.setState({zipcode: ''})
+            await this.props.getWeatherData(zipcode);
+            this.setState({zipcode: ''})
         }
     };
 
@@ -46,9 +44,8 @@ class Zipcode_Input extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
-        something: state.zipcode
+        weatherData: state.currentWeather
     }
 };
 
