@@ -1,1 +1,2 @@
 export const GET_WEATHER_DATA = 'GET_WEATHER_DATA';
+export const SHOW_DAILY = 'SHOW_DAILY';

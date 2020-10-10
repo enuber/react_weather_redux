@@ -43,10 +43,4 @@ class Zipcode_Input extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        weatherData: state.currentWeather
-    }
-};
-
-export default connect(mapStateToProps, { getWeatherData })(Zipcode_Input);
+export default connect(null, { getWeatherData })(Zipcode_Input);

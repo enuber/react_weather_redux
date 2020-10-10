@@ -1,6 +1,7 @@
 import Geocode from 'react-geocode';
 import openweatherOnecall from '../apis/openweatherOneCall';
-import { GET_WEATHER_DATA } from './types';
+import { GET_WEATHER_DATA, SHOW_DAILY } from './types';
+import history from '../history';
 import Keys from '../config.json';
 
 //makes a call to google to get lng/lat for getting weather. Based on success/failure will make a call to get
@@ -37,6 +38,7 @@ export const getWeatherData = zipcode => async dispatch => {
                 type: GET_WEATHER_DATA,
                 payload: data
             })
+            history.push('/');
         }
     );
     //using the data retrieved from Google API, making the call to the weather API.
@@ -56,5 +58,19 @@ export const getWeatherData = zipcode => async dispatch => {
             type: GET_WEATHER_DATA,
             payload: data
         });
+        history.push('/');
     }
+};
+
+export const showDailyWeather = (weatherForDay={}, day=null, city=null, state=null, zip=null) => {
+    const data = {
+        weatherForDay,
+        city,
+        state,
+        zip
+    };
+    return {
+        type: SHOW_DAILY,
+        payload: data
+    };
 };
