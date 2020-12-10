@@ -27,7 +27,7 @@ class ShowDaily extends React.Component {
             const isActive = this.checkActive(currentDay);
             return (
                 <Link
-                    to={`/${day}`}
+                    to={`/apps/weather_react_redux/${day}`}
                     className={`dailyContainer ${isActive}`}
                     key={currentDay.dt}
                     onClick={()=> this.props.showDailyWeather(currentDay, day, city, state, zip)}

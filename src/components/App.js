@@ -13,8 +13,8 @@ const App = () => {
                 <Header/>
                 <ZipcodeInput/>
                 <Switch>
-                    <Route path="/" exact component={ShowWeather}  />
-                    <Route path="/:day" component={ShowDay}  />
+                    <Route path="/apps/weather_react_redux/" exact component={ShowWeather}  />
+                    <Route path="/apps/weather_react_redux/:day" component={ShowDay}  />
                 </Switch>
             </Router>
         </div>
