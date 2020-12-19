@@ -1,6 +1,6 @@
 {
   "name": "weather_redux",
-  "homepage": "https://eriknuber.us/apps/weather_react_redux/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
