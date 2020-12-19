@@ -38,7 +38,7 @@ export const getWeatherData = zipcode => async dispatch => {
                 type: GET_WEATHER_DATA,
                 payload: data
             })
-            history.push('/apps/weather_react_redux/');
+            history.push('/');
         }
     );
     //using the data retrieved from Google API, making the call to the weather API.
@@ -58,7 +58,7 @@ export const getWeatherData = zipcode => async dispatch => {
             type: GET_WEATHER_DATA,
             payload: data
         });
-        history.push('/apps/weather_react_redux/');
+        history.push('/');
     }
 };
 
